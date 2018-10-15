@@ -14,7 +14,6 @@
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
 
-
 import easy
 
 help = {"1": "Перейти в папку",
@@ -23,13 +22,12 @@ help = {"1": "Перейти в папку",
     "4": "Создать папку",
     "5": "Закрыть программу"}
 print(help)
-task = input("Выберите действие из списка выше")
 
 while True:
-    job = str(input(task))
+    job = str(input("Введите действие из списка выше"))
     if(job == "1"):
         name = input("Введите название папки: ")
-        easy.change_dir(name)
+        easy.change_directory(name)
     if(job == "2"):
         easy.spisok()
     if(job == "3"):
