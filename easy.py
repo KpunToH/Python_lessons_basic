@@ -1,31 +1,30 @@
 
-#Мини-библиотека функций для задания 5-нормал
-
+#РњРёРЅРё-Р±РёР±Р»РёРѕС‚РµРєР° РґР»СЏ РЅРѕСЂРјР°Р»-5
 import os
 
 def create_directory(name):
     path_dir = os.path.join(os.getcwd(), name)
     try:
         os.mkdir(path_dir)
-        print(f"Директория {name} успешно создана")
+        print(f"Р”РёСЂРµРєС‚РѕСЂРёСЏ {name} СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅР°")
     except FileExistsError:
-        print(f"Ошибка создания - директория {name} уже существует")
-def delete_dir(name):
+        print(f"Р”РёСЂРµРєС‚РѕСЂРёСЏ {name} СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚")
+def delete_directory(name):
     path_dir= os.path.join(os.getcwd(), name)
     try:
         os.rmdir(path_dir)
-        print(f"Директория {name} успешно удалена")
+        print(f"Р”РёСЂРµРєС‚РѕСЂРёСЏ{name} СѓСЃРїРµС€РЅРѕ СѓРґР°Р»РµРЅР°")
     except FileNotFoundError:
-        print(f"Ошибка - директория {name} отсутсвует")
-def change_dir(name):
+        print(f"Р”РёСЂРµРєС‚РѕСЂРёСЏ {name} РѕС‚СЃСѓС‚СЃРІСѓРµС‚")
+def change_directory(name):
     path_dir = os.path.join(os.getcwd(), name)
     try:
         os.chdir(path_dir)
-        print(f"Директория {name} успешно выбрана")
+        print(f"РўРµРєСѓС‰Р°СЏ РґРёСЂРµРєС‚РѕСЂРёСЏ{name} РІС‹Р±СЂР°РЅР° РІ РєР°С‡РµСЃС‚РІРµ СЂР°Р±РѕС‡РµР№")
     except FileNotFoundError:
-        print(f"Ошибка - директория {name} не найдена")
-def show_content():
+        print(f"РќРµ РЅР°Р№РґРµРЅР° РґРёСЂРµРєС‚РѕСЂРёСЏ {name} ")
+def spisok():
     spisok = os.listdir(path=os.getcwd())
-    print("Список элементов в текущей директории:")
+    print("РЎРїРёСЃРѕРє СЌР»РµРјРµРЅС‚РѕРІ С‚РµРєСѓС‰РµР№ РґРёСЂРµРєС‚РѕСЂРёРё:")
     for i in spisok:
         print(i)
