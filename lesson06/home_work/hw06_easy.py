@@ -1,6 +1,34 @@
 # Задача-1: Написать класс для фигуры-треугольника, заданного координатами трех точек.
 # Определить методы, позволяющие вычислить: площадь, высоту и периметр фигуры.
 
+class triangle:
+    def __init__(self, A, B, C):
+        self.A = A
+        self.B = B
+        self.C = C
+
+    def side_lenght(self, point1, point2):
+        #считаем длину каждой стороны
+            side_lenght = abs(((point2[0] - point1[0]) ** 2 + ((point2[1] - point1[1]) ** 2)) ** 0.5)
+            return side_lenght
+
+    def triangle_calculate(self, A, B, C):
+        #выполняем все требуемы расчеты
+            AB = triangle.side_lenght(self, A, B)
+            AC = triangle.side_lenght(self, A, C)
+            BC = triangle.side_lenght(self, B, C)
+        #периметр
+            P = (AB + AC + BC)
+            P_str = "Периметр треугольника равен " + str(P)
+        #площадь
+            S = (0.5*(abs((B[0]-A[0])*(C[1]-A[1])-(C[0]-A[0])*(B[1]-A[1]))))
+            S_str = "Площадь треугольника равна " + str(S)
+        #высоты
+            AA1 = "Длина высоты из точки A на сторону BC " + str((2*S)/BC)
+            BB1 = "Длина высоты из точки B на сторону AC " + str((2*S)/AC)
+            CC1 = "Длина высоты из точки С на сторону AB " + str((2*S)/AB)
+            return P_str, S_str, AA1, BB1, CC1
+
 
 # Задача-2: Написать Класс "Равнобочная трапеция", заданной координатами 4-х точек.
 # Предусмотреть в классе методы:
